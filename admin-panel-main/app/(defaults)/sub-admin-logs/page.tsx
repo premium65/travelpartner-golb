@@ -1,4 +1,5 @@
 import Breadcrumb from '@/components/Breadcrumb';
+import SubAdminLogsDatatables from '@/components/defaults/SubAdminLogs/sub-admin-logs-datatables';
 import { Metadata } from 'next';
 import React from 'react';
 
@@ -13,7 +14,7 @@ const SubAdminLogs = () => {
     return (
         <div>
         <Breadcrumb items={breadcrumbItems} />
-        <div>Sub Admin Logs</div>
+        <SubAdminLogsDatatables />
         </div>);
 };
 
