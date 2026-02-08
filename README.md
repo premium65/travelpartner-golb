@@ -2,6 +2,10 @@
 
 This repository contains the complete source code for the TravelPartner platform.
 
+## 🚀 Quick Start
+
+**New here?** Check out the [QUICK_START.md](QUICK_START.md) guide for fast setup with all localhost links!
+
 ## Projects
 - **admin-panel-main** – Admin dashboard
 - **api-main** – Backend API service
