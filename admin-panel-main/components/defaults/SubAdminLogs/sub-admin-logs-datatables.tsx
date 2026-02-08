@@ -15,6 +15,23 @@ dayjs.extend(timezone);
 
 const PAGE_SIZE = 10;
 
+interface AdminLogRecord {
+  _id: string;
+  taskType?: string;
+  taskDescription?: string;
+  adminEmail?: string;
+  createdAt: string;
+}
+
+interface LoginHistoryRecord {
+  _id: string;
+  countryName?: string;
+  ipaddress?: string;
+  browser?: string;
+  status?: string;
+  createdDate: string;
+}
+
 const renderDate = (date: string) => {
   const parsedDate = dayjs(date);
   if (!parsedDate.isValid()) {
@@ -24,8 +41,8 @@ const renderDate = (date: string) => {
 };
 
 const SubAdminLogsDatatables = () => {
-  const [adminLogsData, setAdminLogsData] = useState<any[]>([]);
-  const [loginHistoryData, setLoginHistoryData] = useState<any[]>([]);
+  const [adminLogsData, setAdminLogsData] = useState<AdminLogRecord[]>([]);
+  const [loginHistoryData, setLoginHistoryData] = useState<LoginHistoryRecord[]>([]);
   const [totalRecords, setTotalRecords] = useState(0);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
@@ -113,10 +130,15 @@ const SubAdminLogsDatatables = () => {
     const dataToUse = activeTab === 'logs' ? filteredLogsData : filteredLoginHistoryData;
     const sortedData = [...dataToUse].sort((a, b) => {
       const { columnAccessor, direction } = sortStatus;
-      if (a[columnAccessor] < b[columnAccessor]) {
+      const aValue = a[columnAccessor as keyof (AdminLogRecord | LoginHistoryRecord)];
+      const bValue = b[columnAccessor as keyof (AdminLogRecord | LoginHistoryRecord)];
+      
+      if (!aValue || !bValue) return 0;
+      
+      if (aValue < bValue) {
         return direction === 'asc' ? -1 : 1;
       }
-      if (a[columnAccessor] > b[columnAccessor]) {
+      if (aValue > bValue) {
         return direction === 'asc' ? 1 : -1;
       }
       return 0;
@@ -127,7 +149,7 @@ const SubAdminLogsDatatables = () => {
     return sortedData.slice(start, end);
   };
 
-  const logsColumns: DataTableProps<any>['columns'] = [
+  const logsColumns: DataTableProps<AdminLogRecord>['columns'] = [
     {
       accessor: 'createdAt',
       title: 'Date',
@@ -173,7 +195,7 @@ const SubAdminLogsDatatables = () => {
     },
   ];
 
-  const loginHistoryColumns: DataTableProps<any>['columns'] = [
+  const loginHistoryColumns: DataTableProps<LoginHistoryRecord>['columns'] = [
     {
       accessor: 'createdDate',
       title: 'Login Date',
@@ -296,23 +318,45 @@ const SubAdminLogsDatatables = () => {
       )}
 
       {(activeTab === 'logs' ? adminLogsData : loginHistoryData).length > 0 ? (
-        <DataTable
-          columns={activeTab === 'logs' ? logsColumns : loginHistoryColumns}
-          records={paginatedData()}
-          totalRecords={activeTab === 'logs' ? filteredLogsData.length : filteredLoginHistoryData.length}
-          fetching={loading}
-          page={page}
-          onPageChange={setPage}
-          recordsPerPage={PAGE_SIZE}
-          sortStatus={sortStatus}
-          onSortStatusChange={handleSortStatusChange}
-          withTableBorder
-          withColumnBorders
-          withRowBorders
-          borderRadius="sm"
-          shadow="sm"
-          minHeight={(activeTab === 'logs' ? filteredLogsData : filteredLoginHistoryData).length === 0 ? 300 : 0}
-        />
+        <>
+          {activeTab === 'logs' ? (
+            <DataTable
+              columns={logsColumns}
+              records={paginatedData() as AdminLogRecord[]}
+              totalRecords={filteredLogsData.length}
+              fetching={loading}
+              page={page}
+              onPageChange={setPage}
+              recordsPerPage={PAGE_SIZE}
+              sortStatus={sortStatus}
+              onSortStatusChange={handleSortStatusChange}
+              withTableBorder
+              withColumnBorders
+              withRowBorders
+              borderRadius="sm"
+              shadow="sm"
+              minHeight={filteredLogsData.length === 0 ? 300 : 0}
+            />
+          ) : (
+            <DataTable
+              columns={loginHistoryColumns}
+              records={paginatedData() as LoginHistoryRecord[]}
+              totalRecords={filteredLoginHistoryData.length}
+              fetching={loading}
+              page={page}
+              onPageChange={setPage}
+              recordsPerPage={PAGE_SIZE}
+              sortStatus={sortStatus}
+              onSortStatusChange={handleSortStatusChange}
+              withTableBorder
+              withColumnBorders
+              withRowBorders
+              borderRadius="sm"
+              shadow="sm"
+              minHeight={filteredLoginHistoryData.length === 0 ? 300 : 0}
+            />
+          )}
+        </>
       ) : (
         <Center className="h-[300px] flex justify-center items-center">
           <Text>{loading ? 'Loading...' : 'No records found'}</Text>

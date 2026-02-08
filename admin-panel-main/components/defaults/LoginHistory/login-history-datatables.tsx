@@ -13,6 +13,19 @@ dayjs.extend(timezone);
 
 const PAGE_SIZE = 10;
 
+interface LoginHistoryRecord {
+  _id: string;
+  countryCode?: string;
+  countryName?: string;
+  regionName?: string;
+  ipaddress?: string;
+  browser?: string;
+  deviceType?: string;
+  os?: string;
+  status?: string;
+  createdDate: string;
+}
+
 const renderDate = (date: string) => {
   const parsedDate = dayjs(date);
   if (!parsedDate.isValid()) {
@@ -22,11 +35,11 @@ const renderDate = (date: string) => {
 };
 
 const LoginHistoryDatatables = () => {
-  const [loginHistoryData, setLoginHistoryData] = useState<any[]>([]);
+  const [loginHistoryData, setLoginHistoryData] = useState<LoginHistoryRecord[]>([]);
   const [totalRecords, setTotalRecords] = useState(0);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
-  const [sortStatus, setSortStatus] = useState<DataTableSortStatus<any>>({
+  const [sortStatus, setSortStatus] = useState<DataTableSortStatus<LoginHistoryRecord>>({
     columnAccessor: 'createdDate',
     direction: 'desc',
   });
@@ -84,7 +97,7 @@ const LoginHistoryDatatables = () => {
     );
   });
 
-  const handleSortStatusChange = (status: DataTableSortStatus<any>) => {
+  const handleSortStatusChange = (status: DataTableSortStatus<LoginHistoryRecord>) => {
     setPage(1);
     setSortStatus(status);
   };
@@ -92,10 +105,15 @@ const LoginHistoryDatatables = () => {
   const paginatedData = () => {
     const sortedData = [...filteredData].sort((a, b) => {
       const { columnAccessor, direction } = sortStatus;
-      if (a[columnAccessor] < b[columnAccessor]) {
+      const aValue = a[columnAccessor as keyof LoginHistoryRecord];
+      const bValue = b[columnAccessor as keyof LoginHistoryRecord];
+      
+      if (!aValue || !bValue) return 0;
+      
+      if (aValue < bValue) {
         return direction === 'asc' ? -1 : 1;
       }
-      if (a[columnAccessor] > b[columnAccessor]) {
+      if (aValue > bValue) {
         return direction === 'asc' ? 1 : -1;
       }
       return 0;
@@ -106,7 +124,7 @@ const LoginHistoryDatatables = () => {
     return sortedData.slice(start, end);
   };
 
-  const columns: DataTableProps<any>['columns'] = [
+  const columns: DataTableProps<LoginHistoryRecord>['columns'] = [
     {
       accessor: 'createdDate',
       title: 'Login Date',
