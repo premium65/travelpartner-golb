@@ -24,7 +24,7 @@ const DashboardComponent = () => {
           `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/admin/get-dashboard-data`,
           {
             headers: {
-              Authorization: `${token}`, // Add Bearer prefix here
+              Authorization: `Bearer ${token}`,
             },
           }
         );

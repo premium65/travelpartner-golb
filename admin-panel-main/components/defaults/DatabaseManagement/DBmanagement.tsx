@@ -17,7 +17,7 @@ const DatabaseComponent = () => {
         `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/admin/backup`,
         {
           headers: {
-            Authorization: `${token}`, // Add Bearer prefix here
+            Authorization: `Bearer ${token}`,
           },
         }
       );
