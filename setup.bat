@@ -42,6 +42,7 @@ if not exist ".env" (
 )
 if not exist "node_modules" (
     echo Installing dependencies...
+    set PUPPETEER_SKIP_DOWNLOAD=true
     call npm install
 )
 cd ..

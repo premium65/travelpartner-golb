@@ -141,6 +141,21 @@ cd user-panel-main
 PORT=3003 npm run dev
 ```
 
+### Puppeteer/Chrome Download Issues
+
+If you encounter issues with Puppeteer trying to download Chrome during installation:
+
+```bash
+# Skip Puppeteer Chromium download
+export PUPPETEER_SKIP_DOWNLOAD=true
+
+# Then install dependencies
+cd api-main
+npm install
+```
+
+The setup script automatically sets this variable, but if you're installing manually, you may need to set it.
+
 ### Database Connection Issues
 
 Make sure MongoDB is running:

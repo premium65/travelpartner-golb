@@ -100,6 +100,8 @@ install_dependencies() {
     cd "$SCRIPT_DIR/$service_dir"
     
     if [ ! -d "node_modules" ]; then
+        # Skip Puppeteer Chromium download to avoid network issues
+        export PUPPETEER_SKIP_DOWNLOAD=true
         npm install
         print_message "$GREEN" "   ✅ Dependencies installed"
     else
