@@ -65,10 +65,11 @@ fi
 
 echo ""
 
-# Create a function to cleanup background processes on exit
+# Function to cleanup background processes on exit
 cleanup() {
     print_message "$YELLOW" "🛑 Stopping all services..."
-    jobs -p | xargs -r kill 2>/dev/null
+    # Use kill without -9 for better cross-platform compatibility
+    jobs -p | xargs kill 2>/dev/null || true
     wait
     print_message "$GREEN" "✅ All services stopped"
     exit 0

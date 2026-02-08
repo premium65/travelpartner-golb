@@ -31,7 +31,14 @@ kill_port() {
     PID=$(lsof -t -i:$port 2>/dev/null)
     if [ -n "$PID" ]; then
         print_message "$YELLOW" "🛑 Stopping $service_name (PID: $PID) on port $port..."
-        kill -9 $PID
+        # Try graceful shutdown first (SIGTERM)
+        kill $PID 2>/dev/null || true
+        sleep 2
+        # Check if still running, force kill if necessary
+        if ps -p $PID > /dev/null 2>&1; then
+            print_message "$YELLOW" "   Process didn't stop gracefully, forcing..."
+            kill -9 $PID 2>/dev/null || true
+        fi
         print_message "$GREEN" "   ✅ Stopped"
     else
         print_message "$BLUE" "   ℹ️  No process running on port $port"

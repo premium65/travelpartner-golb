@@ -3,7 +3,8 @@
 # TravelPartner Platform - Automated Setup Script
 # This script will set up all three services with their dependencies
 
-set -e  # Exit on any error
+# Exit on error, but allow some commands to fail gracefully
+set -e
 
 echo "======================================"
 echo "  TravelPartner Platform Setup"
