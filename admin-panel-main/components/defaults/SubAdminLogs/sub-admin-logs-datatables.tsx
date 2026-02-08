@@ -1,3 +1,22 @@
+/**
+ * Sub Admin Logs Data Table Component
+ * 
+ * This component provides a tabbed interface to view:
+ * 1. Admin Logs - Activity logs showing what actions the admin has performed
+ * 2. Login History - Login attempts specific to the current admin
+ * 
+ * The component fetches data from /api/admin/admin-logs-data using the current admin's ID
+ * from the Redux store. This ensures each admin only sees their own logs.
+ * 
+ * Features:
+ * - Tabbed interface (Admin Logs / Login History)
+ * - Pagination (10 records per page)
+ * - Column sorting and filtering
+ * - Real-time loading states
+ * - Color-coded status indicators
+ * 
+ * @component
+ */
 'use client';
 
 import { Center, Group, Text, TextInput, Button } from '@mantine/core';
@@ -15,6 +34,10 @@ dayjs.extend(timezone);
 
 const PAGE_SIZE = 10;
 
+/**
+ * Interface for Admin Log Record
+ * Represents an administrative action performed by an admin
+ */
 interface AdminLogRecord {
   _id: string;
   taskType?: string;
@@ -23,6 +46,10 @@ interface AdminLogRecord {
   createdAt: string;
 }
 
+/**
+ * Interface for Login History Record
+ * Represents a login attempt by an admin
+ */
 interface LoginHistoryRecord {
   _id: string;
   countryName?: string;

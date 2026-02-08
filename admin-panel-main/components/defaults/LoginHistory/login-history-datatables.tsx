@@ -1,3 +1,19 @@
+/**
+ * Login History Data Table Component
+ * 
+ * This component displays a paginated, sortable, and filterable table of admin login history.
+ * It fetches data from the /api/admin/login-history endpoint and displays information such as
+ * login date, location (country, region), IP address, browser, device type, OS, and login status.
+ * 
+ * Features:
+ * - Pagination (10 records per page)
+ * - Column sorting (ascending/descending)
+ * - Per-column filtering
+ * - Color-coded status indicators (green for success, red for failure)
+ * - Date formatting in Asia/Kolkata timezone
+ * 
+ * @component
+ */
 'use client';
 
 import { Center, Group, Text, TextInput, Button } from '@mantine/core';
@@ -13,6 +29,10 @@ dayjs.extend(timezone);
 
 const PAGE_SIZE = 10;
 
+/**
+ * Interface for Login History Record
+ * Represents a single login attempt with all associated metadata
+ */
 interface LoginHistoryRecord {
   _id: string;
   countryCode?: string;
@@ -26,6 +46,11 @@ interface LoginHistoryRecord {
   createdDate: string;
 }
 
+/**
+ * Formats a date string to Asia/Kolkata timezone
+ * @param date - ISO date string
+ * @returns Formatted date string (YYYY-MM-DD HH:mm) or 'Invalid Date'
+ */
 const renderDate = (date: string) => {
   const parsedDate = dayjs(date);
   if (!parsedDate.isValid()) {
@@ -35,6 +60,7 @@ const renderDate = (date: string) => {
 };
 
 const LoginHistoryDatatables = () => {
+  // State management for table data and UI controls
   const [loginHistoryData, setLoginHistoryData] = useState<LoginHistoryRecord[]>([]);
   const [totalRecords, setTotalRecords] = useState(0);
   const [page, setPage] = useState(1);
@@ -43,6 +69,8 @@ const LoginHistoryDatatables = () => {
     columnAccessor: 'createdDate',
     direction: 'desc',
   });
+  
+  // Filter states for each column
   const [filters, setFilters] = useState({
     countryCode: '',
     countryName: '',
@@ -54,6 +82,10 @@ const LoginHistoryDatatables = () => {
     status: '',
   });
 
+  /**
+   * Fetches login history data from the backend API
+   * Called on component mount
+   */
   const fetchLoginHistoryData = async () => {
     setLoading(true);
     try {

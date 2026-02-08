@@ -22,6 +22,19 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## Admin Panel Features
+
+### Logging & Monitoring
+
+The admin panel includes comprehensive logging features:
+
+- **Login History**: Track all admin login attempts with location, IP, browser details
+- **Sub Admin Logs**: Monitor admin activities and their login history
+
+📖 **Documentation:**
+- [How to Log - Quick Guide](./HOW-TO-LOG.md) - Quick reference for using logging features
+- [Logging Documentation](./LOGGING.md) - Comprehensive logging guide
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
