@@ -9,8 +9,8 @@
         "lint": "next lint"
     },
     "dependencies": {
-        "@ckeditor/ckeditor5-build-classic": "^43.1.1",
-        "@ckeditor/ckeditor5-react": "^9.3.0",
+        "@ckeditor/ckeditor5-build-classic": "^44.3.0",
+        "@ckeditor/ckeditor5-react": "^11.0.1",
         "@emotion/react": "^11.10.6",
         "@headlessui/react": "^1.7.8",
         "@mantine/core": "^7.12.2",
@@ -35,7 +35,7 @@
         "i18next": "^22.4.10",
         "mantine-contextmenu": "^7.11.3",
         "mantine-datatable": "^7.11.3",
-        "next": "14.0.3",
+        "next": "^14.2.35",
         "ni18n": "^1.0.5",
         "react": "18.2.0",
         "react-animate-height": "^3.1.0",

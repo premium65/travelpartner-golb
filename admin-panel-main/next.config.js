@@ -4,10 +4,10 @@ const nextConfig = {
     swcMinify: true,
     images: {
       remotePatterns: [
-        {
+        ...(process.env.NEXT_PUBLIC_LOCAL_IMAGE_HOST ? [{
           protocol: "http",
           hostname: process.env.NEXT_PUBLIC_LOCAL_IMAGE_HOST,
-        },
+        }] : []),
         {
           protocol: "https",
           hostname: "api.goib.tech",		
@@ -21,19 +21,15 @@ const nextConfig = {
                 protocol: 'https',
                 hostname: 'api.goibtech.site',
               },
-        {
+        ...(process.env.NEXT_PUBLIC_API_IMAGE_HOST ? [{
           protocol: "https",
           hostname: process.env.NEXT_PUBLIC_API_IMAGE_HOST,
-        },
+        }] : []),
       ],
     },
     eslint: {
         ignoreDuringBuilds: true,
     },
-     // Enable experimental features if needed (e.g., app directory)
-     experimental: {
-        appDir: true,
-      },
         // Example: Setting up custom redirects
         async redirects() {
             return [
