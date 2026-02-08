@@ -17,14 +17,20 @@ import { SwiperSliders } from "@/components/SwiperSliders/SwiperSliders";
 import { calendarState } from "@/state/calendarData";
 import CountUp from "react-countup";
 import Link from "next/link";
+import Header from "@/components/header/Header";
+import LoggedInHeader from "@/components/default/header";
+import { authState } from "@/state/authAtom";
+
 export default function Home() {
   const walletData = useRecoilValue(walletAtom);
   const [userData, setUserData] = useRecoilState(userAtom);
   const [calendarData, setCalendarData] = useRecoilState(calendarState);
+  const isLoggedIn = useRecoilValue(authState);
 
   return (
     <>
-      <div className="">
+      {isLoggedIn ? <LoggedInHeader /> : <Header />}
+      <div className="pt-[90px]">
         <div
           className="relative"
           style={{
