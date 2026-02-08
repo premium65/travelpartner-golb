@@ -64,41 +64,41 @@ const SubAdminLogsDatatables = () => {
     status: '',
   });
 
-  const fetchAdminLogsData = async () => {
-    setLoading(true);
-    try {
-      const token = localStorage.getItem('authToken');
-      const adminId = adminProfileData?._id;
-      
-      if (!adminId) {
-        console.error('Admin ID not found');
-        return;
-      }
-
-      const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/admin/admin-logs-data?adminId=${adminId}`,
-        {
-          headers: {
-            Authorization: `${token}`,
-          },
-        }
-      );
-
-      if (response.status === 200 && response.data.success) {
-        setAdminLogsData(response.data.result.logData || []);
-        setLoginHistoryData(response.data.result.loginData || []);
-        setTotalRecords((response.data.result.logData?.length || 0) + (response.data.result.loginData?.length || 0));
-      } else {
-        console.error('Failed to load admin logs data.');
-      }
-    } catch (error) {
-      console.error('An error occurred while fetching admin logs data:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
   useEffect(() => {
+    const fetchAdminLogsData = async () => {
+      setLoading(true);
+      try {
+        const token = localStorage.getItem('authToken');
+        const adminId = adminProfileData?._id;
+        
+        if (!adminId) {
+          console.error('Admin ID not found');
+          return;
+        }
+
+        const response = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/admin/admin-logs-data?adminId=${adminId}`,
+          {
+            headers: {
+              Authorization: `${token}`,
+            },
+          }
+        );
+
+        if (response.status === 200 && response.data.success) {
+          setAdminLogsData(response.data.result.logData || []);
+          setLoginHistoryData(response.data.result.loginData || []);
+          setTotalRecords((response.data.result.logData?.length || 0) + (response.data.result.loginData?.length || 0));
+        } else {
+          console.error('Failed to load admin logs data.');
+        }
+      } catch (error) {
+        console.error('An error occurred while fetching admin logs data:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
     if (adminProfileData?._id) {
       fetchAdminLogsData();
     }
