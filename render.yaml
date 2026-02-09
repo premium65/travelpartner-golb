@@ -5,8 +5,8 @@ services:
     runtime: node
     plan: starter
     rootDir: user-panel-main
-    buildCommand: yarn install && yarn build
-    startCommand: yarn start
+    buildCommand: npm install && npm run build
+    startCommand: npm start
     envVars:
       - key: NODE_ENV
         value: production
@@ -23,8 +23,8 @@ services:
     runtime: node
     plan: starter
     rootDir: admin-panel-main
-    buildCommand: yarn install && yarn build
-    startCommand: yarn start
+    buildCommand: npm install && npm run build
+    startCommand: npm start
     envVars:
       - key: NODE_ENV
         value: production
@@ -44,7 +44,7 @@ services:
     plan: starter
     rootDir: api-main
     buildCommand: npm install
-    startCommand: cross-env NODE_ENV=production node babel_hook.js
+    startCommand: npm run prod
     envVars:
       - key: NODE_ENV
         value: production
