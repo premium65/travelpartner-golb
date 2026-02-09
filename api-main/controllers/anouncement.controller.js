@@ -1,10 +1,10 @@
 // import model
 import {
     Anouncement
-} from '../models'
+} from '../models/index.js'
 
 // import lib
-import { nowDateInUTC } from '../lib/dateHelper'
+import { nowDateInUTC } from '../lib/dateHelper.js'
 
 /** 
  * Add Announcement

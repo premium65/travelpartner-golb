@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 // import config
-import config from '../config'
+import config from '../config/index.js'
 
 export const validation = async (mobileNumber) => {
     try {
