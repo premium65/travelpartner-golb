@@ -43,7 +43,7 @@ services:
     runtime: node
     plan: starter
     rootDir: api-main
-    buildCommand: PUPPETEER_SKIP_DOWNLOAD=true npm install
+    buildCommand: npm install
     startCommand: cross-env NODE_ENV=production node babel_hook.js
     envVars:
       - key: NODE_ENV

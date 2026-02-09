@@ -49,13 +49,13 @@ All services are configured in the `render.yaml` file at the root of the reposit
 - **Name**: travelpartner-api
 - **Runtime**: Node.js
 - **Root Directory**: `api-main`
-- **Build Command**: `PUPPETEER_SKIP_DOWNLOAD=true npm install`
+- **Build Command**: `npm install`
 - **Start Command**: `cross-env NODE_ENV=production node babel_hook.js`
 
 **Required Environment Variables:**
 - `NODE_ENV` = production (auto-set in render.yaml)
 - `PUPPETEER_SKIP_DOWNLOAD` = true (auto-set in render.yaml, skips unused Chromium download)
-- `PORT` - (Auto-set by Render, typically 10000)
+- `PORT` - (Automatically provided by Render, typically port 10000)
 - `DATABASE_URI` - MongoDB connection string (e.g., mongodb+srv://user:pass@cluster.mongodb.net/dbname)
 - `REDIS_URL` - Redis connection string (e.g., redis://red-xxxxx:6379)
 - `BASE_URL` - The URL of your deployed API (e.g., https://travelpartner-api.onrender.com)

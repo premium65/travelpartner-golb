@@ -25,8 +25,8 @@ NEXT_PUBLIC_API_IMAGE_HOST=api.goibtech.site
 Create these in Render Dashboard under the API service settings:
 
 ```env
-# Auto-set by Render (do not set manually)
-PORT=10000
+# Auto-set by Render - typically 10000 (do not set manually)
+# PORT is automatically provided by Render
 
 # Required - MongoDB connection string
 DATABASE_URI=mongodb+srv://username:password@cluster.mongodb.net/database?retryWrites=true&w=majority
