@@ -50,7 +50,7 @@ Update these in Render Dashboard under the User Panel service settings:
 
 ```env
 # Required - URL of the API service
-NEXT_PUBLIC_API_URL=https://travelpartner-api.onrender.com
+NEXT_PUBLIC_API_BASE_URL=https://travelpartner-api.onrender.com
 
 # Optional - Local development image host
 NEXT_PUBLIC_LOCAL_IMAGE_HOST=

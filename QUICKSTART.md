@@ -61,7 +61,7 @@ The user panel is already deployed and working!
    
    Navigate to `travelpartner-user-panel` service → Environment tab:
    ```
-   NEXT_PUBLIC_API_URL = https://travelpartner-api.onrender.com
+   NEXT_PUBLIC_API_BASE_URL = https://travelpartner-api.onrender.com
    NEXT_PUBLIC_API_IMAGE_HOST = api.goibtech.site
    NEXT_PUBLIC_ADMIN_PANEL_URL = https://travelpartner-admin-panel.onrender.com
    ```

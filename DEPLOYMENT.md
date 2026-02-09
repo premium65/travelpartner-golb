@@ -25,7 +25,7 @@ All services are configured in the `render.yaml` file at the root of the reposit
 
 **Required Environment Variables:**
 - `NODE_ENV` = production (auto-set in render.yaml)
-- `NEXT_PUBLIC_API_URL` - The URL of your deployed API (e.g., https://travelpartner-api.onrender.com)
+- `NEXT_PUBLIC_API_BASE_URL` - The URL of your deployed API (e.g., https://travelpartner-api.onrender.com)
 - `NEXT_PUBLIC_LOCAL_IMAGE_HOST` - (Optional) Local image host
 - `NEXT_PUBLIC_API_IMAGE_HOST` - API image host domain
 - `NEXT_PUBLIC_ADMIN_PANEL_URL` - (Optional) The URL of your deployed Admin Panel for the admin login link in footer (e.g., https://travelpartner-admin-panel.onrender.com)
@@ -106,7 +106,7 @@ All services are configured in the `render.yaml` file at the root of the reposit
 #### 3. Update User Panel Configuration
 Since the API URL has changed, update the User Panel environment variables:
 1. Go to the `travelpartner-user-panel` service in Render
-2. Update `NEXT_PUBLIC_API_URL` to point to your deployed API
+2. Update `NEXT_PUBLIC_API_BASE_URL` to point to your deployed API
 
 #### 4. Deploy Services
 1. Render will automatically deploy all three services
