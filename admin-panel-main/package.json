@@ -29,6 +29,7 @@
         "axios": "^1.7.7",
         "clsx": "^2.1.1",
         "crypto-js": "^4.1.1",
+        "dayjs": "^1.11.19",
         "eslint": "8.32.0",
         "eslint-config-next": "13.1.2",
         "formik": "^2.4.6",
@@ -48,6 +49,7 @@
         "react-popper": "^2.3.0",
         "react-redux": "^8.1.3",
         "react-toastify": "^10.0.5",
+        "sharp": "^0.33.5",
         "typescript": "4.9.4",
         "universal-cookie": "^6.1.1",
         "yup": "^1.4.0"
