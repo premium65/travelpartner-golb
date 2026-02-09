@@ -28,6 +28,7 @@ All services are configured in the `render.yaml` file at the root of the reposit
 - `NEXT_PUBLIC_API_URL` - The URL of your deployed API (e.g., https://travelpartner-api.onrender.com)
 - `NEXT_PUBLIC_LOCAL_IMAGE_HOST` - (Optional) Local image host
 - `NEXT_PUBLIC_API_IMAGE_HOST` - API image host domain
+- `NEXT_PUBLIC_ADMIN_PANEL_URL` - (Optional) The URL of your deployed Admin Panel for the admin login link in footer (e.g., https://travelpartner-admin-panel.onrender.com)
 
 ### 2. Admin Panel
 - **Type**: Web Service

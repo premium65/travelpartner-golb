@@ -16,6 +16,8 @@ services:
         sync: false
       - key: NEXT_PUBLIC_API_IMAGE_HOST
         sync: false
+      - key: NEXT_PUBLIC_ADMIN_PANEL_URL
+        sync: false
 
   # ── Admin Panel (Next.js) ─────────────────────────────────
   - type: web

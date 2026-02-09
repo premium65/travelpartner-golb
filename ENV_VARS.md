@@ -57,6 +57,9 @@ NEXT_PUBLIC_LOCAL_IMAGE_HOST=
 
 # Required - Production API domain for images
 NEXT_PUBLIC_API_IMAGE_HOST=api.goibtech.site
+
+# Optional - URL of the Admin Panel (for admin login link in footer)
+NEXT_PUBLIC_ADMIN_PANEL_URL=https://travelpartner-admin-panel.onrender.com
 ```
 
 ## Notes
