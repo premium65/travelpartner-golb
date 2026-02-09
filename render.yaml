@@ -1,0 +1,60 @@
+services:
+  # ── User Panel (Next.js) ──────────────────────────────────
+  - type: web
+    name: travelpartner-user-panel
+    runtime: node
+    plan: starter
+    rootDir: user-panel-main
+    buildCommand: yarn install && yarn build
+    startCommand: yarn start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_API_URL
+        sync: false
+      - key: NEXT_PUBLIC_LOCAL_IMAGE_HOST
+        sync: false
+      - key: NEXT_PUBLIC_API_IMAGE_HOST
+        sync: false
+
+  # ── Admin Panel (Next.js) ─────────────────────────────────
+  - type: web
+    name: travelpartner-admin-panel
+    runtime: node
+    plan: starter
+    rootDir: admin-panel-main
+    buildCommand: yarn install && yarn build
+    startCommand: yarn start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_API_BASE_URL
+        sync: false
+      - key: NEXT_PUBLIC_CRYPTOSECRETKEY
+        sync: false
+      - key: NEXT_PUBLIC_LOCAL_IMAGE_HOST
+        sync: false
+      - key: NEXT_PUBLIC_API_IMAGE_HOST
+        sync: false
+
+  # ── API (Express.js) ──────────────────────────────────────
+  - type: web
+    name: travelpartner-api
+    runtime: node
+    plan: starter
+    rootDir: api-main
+    buildCommand: npm install
+    startCommand: cross-env NODE_ENV=production node babel_hook.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URI
+        sync: false
+      - key: REDIS_URL
+        sync: false
+      - key: BASE_URL
+        sync: false
+      - key: ADMIN_URL
+        sync: false
+      - key: RECAPTCHA_SECRET_KEY
+        sync: false
