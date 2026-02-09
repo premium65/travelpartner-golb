@@ -2,7 +2,7 @@
 import mongoose from 'mongoose';
 
 // import config
-import config from './index';
+import config from './index.js';
 
 const dbConnection = (cb) => {
     console.log("-----config", config.DATABASE_URI)

@@ -3,7 +3,7 @@ const JwtStrategy = require("passport-jwt").Strategy,
   ExtractJwt = require("passport-jwt").ExtractJwt
 
 //import function
-import config from "./index"
+import config from "./index.js"
 import UserToken from "../models/userToken"
 
 var opts = {}

@@ -8,7 +8,7 @@ import bodyParser from "body-parser";
 // import cors from "./config/cors";
 
 // import config
-import config from "./config";
+import config from "./config/index.js";
 import dbConnection from "./config/dbConnection";
 import { createSocketIO } from "./config/socketIO";
 // import routes
