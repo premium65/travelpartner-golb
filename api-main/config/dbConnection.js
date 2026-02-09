@@ -1,8 +1,8 @@
 // import package
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 // import config
-import config from './index';
+const config = require('./index');
 
 const dbConnection = (cb) => {
     console.log("-----config", config.DATABASE_URI)
@@ -23,4 +23,4 @@ const dbConnection = (cb) => {
     })
 }
 
-export default dbConnection;
+module.exports = dbConnection;

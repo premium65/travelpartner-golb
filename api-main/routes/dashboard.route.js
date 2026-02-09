@@ -3,7 +3,7 @@ import express from "express";
 import passport from 'passport';
 
 // import controllers
-import * as dashboardCtrl from "../controllers/dashboard.controller";
+import * as dashboardCtrl from "../controllers/dashboard.controller.js";
 
 const router = express();
 const passportAuth = passport.authenticate("usersAuth", { session: false });

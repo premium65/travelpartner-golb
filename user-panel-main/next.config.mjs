@@ -12,7 +12,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "http",
-        hostname: process.env.NEXT_PUBLIC_LOCAL_IMAGE_HOST,
+        hostname: process.env.NEXT_PUBLIC_LOCAL_IMAGE_HOST || "localhost",
       },
       {
 		protocol: "https",
@@ -29,14 +29,14 @@ const nextConfig = {
         },
 	{
         protocol: "https",
-        hostname: process.env.NEXT_PUBLIC_API_IMAGE_HOST,
+        hostname: process.env.NEXT_PUBLIC_API_IMAGE_HOST || "api.goibtech.site",
       }
     ],
   },
   // Enable experimental features if needed (e.g., app directory)
-  experimental: {
-    appDir: true,
-  },
+  // experimental: {
+  //   appDir: true,
+  // },
 
   // Example: Adding environment variables
   env: {

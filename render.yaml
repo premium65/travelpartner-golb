@@ -1,0 +1,40 @@
+services:
+  - type: web
+    name: travelpartner-api
+    runtime: node
+    rootDir: api-main
+    buildCommand: npm install
+    startCommand: node prod-server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URI
+        value: mongodb://localhost:27017/travelpartner
+
+  - type: web
+    name: travelpartner-user-panel
+    runtime: node
+    rootDir: user-panel-main
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+  - type: web
+    name: travelpartner-admin-panel
+    runtime: node
+    rootDir: admin-panel-main
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+```
+git add render.yaml
+```
+```
+git commit -m "Add Render Blueprint"
+```
+```
+git push origin main

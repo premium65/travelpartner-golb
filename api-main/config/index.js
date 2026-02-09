@@ -1,4 +1,4 @@
-import "dotenv/config";
+require("dotenv/config");
 let key = {};
 let envKey = {
   PORT: process.env.PORT,
@@ -104,7 +104,7 @@ if (process.env.NODE_ENV === "production") {
   };
 }
 
-export default {
+module.exports = {
   ...envKey,
   ...key,
 };

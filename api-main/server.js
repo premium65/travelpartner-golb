@@ -1,22 +1,22 @@
 // import package
-import express from "express";
-import morgan from "morgan";
-import cors from "cors";
-import http from "http";
-import passport from "passport";
-import bodyParser from "body-parser";
+const express = require("express");
+const morgan = require("morgan");
+const cors = require("cors");
+const http = require("http");
+const passport = require("passport");
+const bodyParser = require("body-parser");
 // import cors from "./config/cors";
 
 // import config
-import config from "./config";
-import dbConnection from "./config/dbConnection";
-import { createSocketIO } from "./config/socketIO";
+const config = require("./config");
+const dbConnection = require("./config/dbConnection");
+const { createSocketIO } = require("./config/socketIO");
 // import routes
-import authAPI from "./routes/auth.route";
-import userAPI from "./routes/user.route";
-import adminAPI from "./routes/admin.route";
-import walletAPI from "./routes/wallet.route";
-import dashboardAPI from "./routes/dashboard.route";
+const authAPI = require("./routes/auth.route");
+const userAPI = require("./routes/user.route");
+const adminAPI = require("./routes/admin.route");
+const walletAPI = require("./routes/wallet.route");
+const dashboardAPI = require("./routes/dashboard.route");
 
 const app = express();
 app.use(morgan("dev"));
@@ -83,13 +83,15 @@ app.get("/", (req, res) => {
 let server = http.createServer(app);
 createSocketIO(server);
 // DATABASE CONNECTION
-dbConnection((done) => {
-  if (done) {
+// dbConnection((done) => {
+//   if (done) {
     server = server.listen(config.PORT, function () {
       console.log(
         "\x1b[34m%s\x1b[0m",
         `server is running on port ${config.PORT}`
       );
     });
-  }
-});
+//   }
+// });
+
+module.exports = app;

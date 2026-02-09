@@ -3,7 +3,7 @@ import express from "express";
 import passport from "passport";
 import multer from "multer";
 import path from "path";
-import * as walletCtrl from "../controllers/wallet.controller";
+import * as walletCtrl from "../controllers/wallet.controller.js";
 
 const router = express();
 const passportAuth = passport.authenticate("usersAuth", { session: false });

@@ -1,9 +1,9 @@
 // import package
-import { Server } from 'socket.io';
+const { Server } = require('socket.io');
 
 let socketIO = '';
 
-export const createSocketIO = (server) => {
+const createSocketIO = (server) => {
     // console.log("SERVER",server)
     socketIO = new Server(server, {
         pingTimeout: 600000,
@@ -135,16 +135,18 @@ export const createSocketIO = (server) => {
 
 }
 
-export const socketEmitAll = (type, data) => {
+const socketEmitAll = (type, data) => {
     try {
         socketIO.emit(type, data)
     } catch (err) {
     }
 }
 
-export const socketEmitOne = (type, data, userId) => {
+const socketEmitOne = (type, data, userId) => {
     try {
         socketIO.sockets.in(userId.toString()).emit(type, data);
     } catch (err) {
     }
 }
+
+module.exports = { createSocketIO, socketEmitAll, socketEmitOne };
