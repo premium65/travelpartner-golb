@@ -2,8 +2,8 @@
 import CryptoJS from 'crypto-js';
 
 // import lib
-import config from '../config';
-import isEmpty from './isEmpty';
+import config from '../config/index.js';
+import isEmpty from './isEmpty.js';
 export const encryptJs = (encryptValue) => {
     try {
         encryptValue = JSON.stringify(encryptValue);

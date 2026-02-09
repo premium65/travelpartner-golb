@@ -9,14 +9,14 @@ import bodyParser from "body-parser";
 
 // import config
 import config from "./config/index.js";
-import dbConnection from "./config/dbConnection";
-import { createSocketIO } from "./config/socketIO";
+import dbConnection from "./config/dbConnection.js";
+import { createSocketIO } from "./config/socketIO.js";
 // import routes
-import authAPI from "./routes/auth.route";
-import userAPI from "./routes/user.route";
-import adminAPI from "./routes/admin.route";
-import walletAPI from "./routes/wallet.route";
-import dashboardAPI from "./routes/dashboard.route";
+import authAPI from "./routes/auth.route.js";
+import userAPI from "./routes/user.route.js";
+import adminAPI from "./routes/admin.route.js";
+import walletAPI from "./routes/wallet.route.js";
+import dashboardAPI from "./routes/dashboard.route.js";
 
 const app = express();
 app.use(morgan("dev"));

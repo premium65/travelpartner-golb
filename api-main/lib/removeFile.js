@@ -3,7 +3,7 @@
 import fs from 'fs';
 
 // import lib
-import config from '../config';
+import config from '../config/index.js';
 
 export const removeKycReqFile = (files, type = '') => {
     for (const [key, value] of Object.entries(files)) {

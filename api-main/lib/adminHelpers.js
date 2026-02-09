@@ -1,7 +1,7 @@
 // import package
 import mongoose from "mongoose"
 // import lib
-import isEmpty from "../lib/isEmpty"
+import isEmpty from "../lib/isEmpty.js"
 const ObjectId = mongoose.Types.ObjectId
 export const paginationQuery = (query = {}) => {
   let pagination = {

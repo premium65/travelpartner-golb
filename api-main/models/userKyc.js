@@ -2,7 +2,7 @@
 import mongoose from 'mongoose';
 
 // import config
-import config from '../config';
+import config from '../config/index.js';
 
 // import lib
 const Schema = mongoose.Schema;

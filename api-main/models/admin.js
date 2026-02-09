@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken"
 var crypto = require("crypto")
 
 // import lib
-import config from "../config"
+import config from "../config/index.js"
 
 const Schema = mongoose.Schema
 

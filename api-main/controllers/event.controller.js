@@ -1,7 +1,7 @@
 import path from "path";
-import { columnFillter, paginationQuery } from "../lib/adminHelpers";
-import isEmpty from "../lib/isEmpty";
-import Event from "../models/events";
+import { columnFillter, paginationQuery } from "../lib/adminHelpers.js";
+import isEmpty from "../lib/isEmpty.js";
+import Event from "../models/events.js";
 import fs from 'fs'
 
 export const getAllEvents = async (req, res) => {

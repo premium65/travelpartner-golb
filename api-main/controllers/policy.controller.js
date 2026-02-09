@@ -1,6 +1,6 @@
-import { columnFillter, paginationQuery } from "../lib/adminHelpers";
-import isEmpty from "../lib/isEmpty";
-import Policy from "../models/policies";
+import { columnFillter, paginationQuery } from "../lib/adminHelpers.js";
+import isEmpty from "../lib/isEmpty.js";
+import Policy from "../models/policies.js";
 
 
 export const getPolicyList = async (req, res) => {

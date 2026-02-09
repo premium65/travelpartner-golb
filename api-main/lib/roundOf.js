@@ -1,5 +1,5 @@
 // import lib
-import isEmpty from './isEmpty';
+import isEmpty from './isEmpty.js';
 
 export const toFixed = (item, type = 2) => {
     try {

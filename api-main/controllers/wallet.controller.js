@@ -1,10 +1,10 @@
 import mongoose from "mongoose"
-import Wallet from "../models/wallet"
-import isEmpty from "../lib/isEmpty"
-import { AdminLogs, Bonus, Transaction, User, WithdrawReq } from "../models"
-import { createBookingHistory } from "./package.controller"
-import { columnFillter, paginationQuery } from "../lib/adminHelpers"
-import { IncCntObjId } from "../lib/generalFun"
+import Wallet from "../models/wallet.js"
+import isEmpty from "../lib/isEmpty.js"
+import { AdminLogs, Bonus, Transaction, User, WithdrawReq } from "../models/index.js"
+import { createBookingHistory } from "./package.controller.js"
+import { columnFillter, paginationQuery } from "../lib/adminHelpers.js"
+import { IncCntObjId } from "../lib/generalFun.js"
 
 const ObjectId = mongoose.Types.ObjectId
 

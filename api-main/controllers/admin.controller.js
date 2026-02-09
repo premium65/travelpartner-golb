@@ -28,29 +28,29 @@ import {
   AdminLogs,
   WithdrawReq,
   Bonus,
-} from "../models";
+} from "../models/index.js";
 // import cofig
-import config from "../config";
+import config from "../config/index.js";
 
 // import lib
-import { comparePassword, generatePassword } from "../lib/bcrypt";
+import { comparePassword, generatePassword } from "../lib/bcrypt.js";
 import {
   paginationQuery,
   columnFillter,
   ChartFilter,
-} from "../lib/adminHelpers";
-import isEmpty from "../lib/isEmpty";
-import { encryptString, decryptString } from "../lib/cryptoJS";
+} from "../lib/adminHelpers.js";
+import isEmpty from "../lib/isEmpty.js";
+import { encryptString, decryptString } from "../lib/cryptoJS.js";
 
-import { generateTwoFa } from "./user.controller";
+import { generateTwoFa } from "./user.controller.js";
 import { verifyToken } from "node-2fa";
-import { momentFormat } from "../lib/dateTimeHelper";
-import Referencetable from "../models/Referencetable";
+import { momentFormat } from "../lib/dateTimeHelper.js";
+import Referencetable from "../models/Referencetable.js";
 import "csv-express";
-import Wallet from "../models/wallet";
-import { IncCntObjId } from "../lib/generalFun";
-import { createBookingHistory } from "./package.controller";
-import { createPassbook } from "./common.controller";
+import Wallet from "../models/wallet.js";
+import { IncCntObjId } from "../lib/generalFun.js";
+import { createBookingHistory } from "./package.controller.js";
+import { createPassbook } from "./common.controller.js";
 import couponCode from "coupon-code";
 
 // import isEmpty from "is-empty";

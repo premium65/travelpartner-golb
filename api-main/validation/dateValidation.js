@@ -1,5 +1,5 @@
 // import helpers
-import isEmpty from "../lib/isEmpty";
+import isEmpty from "../lib/isEmpty.js";
 
 export const dateValidation = (req, res, next) => {
   let errors = {};

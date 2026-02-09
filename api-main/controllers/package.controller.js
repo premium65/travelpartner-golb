@@ -1,8 +1,8 @@
 import multer from "multer"
 import mongoose from "mongoose"
-import config from "../config"
-import imageFilter from "../lib/imageFilter"
-import isEmpty from "../lib/isEmpty"
+import config from "../config/index.js"
+import imageFilter from "../lib/imageFilter.js"
+import isEmpty from "../lib/isEmpty.js"
 import path from "path"
 import fs from "fs"
 import {
@@ -11,14 +11,14 @@ import {
   Booking,
   BookingHistory,
   PremiumTask,
-} from "../models"
-import { User } from "../models"
-import { Wallet } from "../models"
-import { Package } from "../models"
-import { columnFillter, paginationQuery } from "../lib/adminHelpers"
-import { commissionFeeZeroCron } from "../config/cron"
-import { createPassbook } from "./common.controller"
-import { IncCntObjId } from "../lib/generalFun"
+} from "../models/index.js"
+import { User } from "../models/index.js"
+import { Wallet } from "../models/index.js"
+import { Package } from "../models/index.js"
+import { columnFillter, paginationQuery } from "../lib/adminHelpers.js"
+import { commissionFeeZeroCron } from "../config/cron.js"
+import { createPassbook } from "./common.controller.js"
+import { IncCntObjId } from "../lib/generalFun.js"
 import { use } from "passport"
 
 const ObjectId = mongoose.Types.ObjectId

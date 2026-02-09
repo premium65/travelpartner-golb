@@ -1,7 +1,7 @@
 // import package
 
 // import helpers
-import isEmpty from "../lib/isEmpty";
+import isEmpty from "../lib/isEmpty.js";
 
 /**
  * Admin Login

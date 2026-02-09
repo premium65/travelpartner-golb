@@ -4,7 +4,7 @@ import express from "express";
 // import controllers
 
 // import validation
-import * as userValid from "../validation/user.validation";
+import * as userValid from "../validation/user.validation.js";
 
 const router = express();
 

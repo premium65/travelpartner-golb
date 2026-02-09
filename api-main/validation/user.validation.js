@@ -2,8 +2,8 @@
 import mongoose from "mongoose";
 
 // import lib
-import isEmpty, { isBoolean } from "../lib/isEmpty";
-import { decryptObject } from "../lib/cryptoJS";
+import isEmpty, { isBoolean } from "../lib/isEmpty.js";
+import { decryptObject } from "../lib/cryptoJS.js";
 
 /**
  * Create New User Validataion

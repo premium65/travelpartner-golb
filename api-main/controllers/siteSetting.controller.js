@@ -3,14 +3,14 @@ import mongoose from "mongoose"
 import multer from "multer"
 import path from "path"
 // import model
-import { SiteSetting } from "../models"
+import { SiteSetting } from "../models/index.js"
 
 //import lib
-import imageFilter from "../lib/imageFilter"
-import isEmpty from "../lib/isEmpty"
+import imageFilter from "../lib/imageFilter.js"
+import isEmpty from "../lib/isEmpty.js"
 
 // import config
-import config from "../config"
+import config from "../config/index.js"
 const ObjectId = mongoose.Types.ObjectId
 
 /**

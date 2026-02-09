@@ -2,10 +2,10 @@
 import express from "express";
 
 // import controllers
-import * as authCtrl from "../controllers/auth.controller";
+import * as authCtrl from "../controllers/auth.controller.js";
 
 // import validation
-import * as userValid from "../validation/user.validation";
+import * as userValid from "../validation/user.validation.js";
 import rateLimit from "express-rate-limit";
 
 const limiter = rateLimit({

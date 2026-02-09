@@ -3,7 +3,7 @@
 import axios from 'axios';
 
 // import lib
-import config from '../lib/config';
+import config from '../lib/config.js';
 
 export const sendEmailTemplate = async (identifier, toEmail, content) => {
     try {

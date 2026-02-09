@@ -2,10 +2,10 @@
 import cors from "cors";
 
 // import config
-import config from "../config";
+import config from "../config/index.js";
 
 // import lib
-import isEmpty from "../lib/isEmpty";
+import isEmpty from "../lib/isEmpty.js";
 
 const corsOptions = {
   origin: function (origin, callback) {

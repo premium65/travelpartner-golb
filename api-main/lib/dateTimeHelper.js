@@ -2,7 +2,7 @@
 import moment from "moment";
 
 // import lib
-import isEmpty from "./isEmpty";
+import isEmpty from "./isEmpty.js";
 
 export const dateTimeFormat = (dateTime, format = "YYYY-MM-DD HH:mm:ss") => {
     try {

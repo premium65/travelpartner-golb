@@ -1,13 +1,13 @@
 import mongoose from "mongoose";
-import { AdminProfit } from "../models";
+import { AdminProfit } from "../models/index.js";
 import {
   paginationQuery,
   columnFillter,
   filterSearchQuery,
-} from "../lib/adminHelpers";
-import { IncCntObjId } from "../lib/generalFun";
-import { momentFormat } from "../lib/dateTimeHelper";
-import {convert} from "../lib/convert"
+} from "../lib/adminHelpers.js";
+import { IncCntObjId } from "../lib/generalFun.js";
+import { momentFormat } from "../lib/dateTimeHelper.js";
+import {convert} from "../lib/convert.js"
 export const saveAdminprofit = async (reqBody) => {
   try {
     var saveAdminProfit = {

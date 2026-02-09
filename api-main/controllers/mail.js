@@ -1,6 +1,6 @@
 // import model
-import { Currency, User } from "../models";
-import { mailTemplateLang } from "./emailTemplate.controller";
+import { Currency, User } from "../models/index.js";
+import { mailTemplateLang } from "./emailTemplate.controller.js";
 
 export const sendMail = async (reqBody) => {
   try {

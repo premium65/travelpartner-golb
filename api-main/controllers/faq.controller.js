@@ -1,13 +1,13 @@
 // import model
-import { FaqCategory, Faq } from "../models";
+import { FaqCategory, Faq } from "../models/index.js";
 
 // import lib
 import {
   paginationQuery,
   columnFillter,
   filterSearchQuery,
-} from "../lib/adminHelpers";
-import isEmpty from "../lib/isEmpty";
+} from "../lib/adminHelpers.js";
+import isEmpty from "../lib/isEmpty.js";
 
 /**
  * Add Faq Category

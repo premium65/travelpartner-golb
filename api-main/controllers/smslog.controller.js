@@ -1,9 +1,9 @@
 //import model
-import { Smslog } from "../models"
-import { paginationQuery, columnFillter } from "../lib/adminHelpers"
+import { Smslog } from "../models/index.js"
+import { paginationQuery, columnFillter } from "../lib/adminHelpers.js"
 
 //import lib
-import isEmpty from "../lib/isEmpty";
+import isEmpty from "../lib/isEmpty.js";
 
 export const getsmslog = async (req, res) => {
     try {

@@ -1,5 +1,5 @@
 // import lib
-import isEmpty from './isEmpty';
+import isEmpty from './isEmpty.js';
 
 export const capitalize = (s) => {
     if (typeof s !== 'string') return ''

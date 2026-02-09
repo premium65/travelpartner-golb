@@ -1,6 +1,6 @@
 // import helpers
-import isEmpty from '../lib/isEmpty';
-import { removeKycReqFile } from '../lib/removeFile';
+import isEmpty from '../lib/isEmpty.js';
+import { removeKycReqFile } from '../lib/removeFile.js';
 
 /** 
  * Update Id Proof

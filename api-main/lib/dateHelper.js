@@ -1,4 +1,4 @@
-import isEmpty from "./isEmpty";
+import isEmpty from "./isEmpty.js";
 
 export const dateFormat = (dateTime, format = 'YYYY-MM-DD') => {
     try {

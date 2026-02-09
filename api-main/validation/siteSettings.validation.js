@@ -1,4 +1,4 @@
-import isEmpty from '../lib/isEmpty';
+import isEmpty from '../lib/isEmpty.js';
 
 /** 
  * Update Ste Setails

@@ -1,11 +1,11 @@
 import multer from "multer";
 import mongoose from "mongoose";
-import config from "../config";
-import imageFilter from "../lib/imageFilter";
-import isEmpty from "../lib/isEmpty";
+import config from "../config/index.js";
+import imageFilter from "../lib/imageFilter.js";
+import isEmpty from "../lib/isEmpty.js";
 import path from "path";
 import fs from "fs";
-import { Booking } from "../models";
-import { User } from "../models";
-import { Wallet } from "../models";
+import { Booking } from "../models/index.js";
+import { User } from "../models/index.js";
+import { Wallet } from "../models/index.js";
 const ObjectId = mongoose.Types.ObjectId;

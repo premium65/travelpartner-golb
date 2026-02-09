@@ -2,7 +2,7 @@
 import mongoose from 'mongoose';
 
 // import helpers
-import isEmpty from '../lib/isEmpty';
+import isEmpty from '../lib/isEmpty.js';
 
 
 /** 

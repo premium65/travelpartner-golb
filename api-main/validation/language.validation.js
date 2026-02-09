@@ -2,7 +2,7 @@
 import mongoose from 'mongoose';
 
 // import helpers
-import isEmpty, { isBoolean } from '../lib/isEmpty';
+import isEmpty, { isBoolean } from '../lib/isEmpty.js';
 
 /** 
  * Add Language

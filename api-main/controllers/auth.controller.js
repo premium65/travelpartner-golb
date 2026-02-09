@@ -1,9 +1,9 @@
 // import package
 import mongoose from "mongoose"
 import couponCode from "coupon-code"
-import { sentOtp, verifyOtpCode } from "./smsGateway"
+import { sentOtp, verifyOtpCode } from "./smsGateway.js"
 // import config
-import config from "../config"
+import config from "../config/index.js"
 
 // import modal
 import {
@@ -14,15 +14,15 @@ import {
   UserSetting,
   Admin,
   ReferTable,
-} from "../models"
+} from "../models/index.js"
 // import controllers
-import { userProfileDetail } from "./user.controller"
+import { userProfileDetail } from "./user.controller.js"
 // import lib
-import isEmpty from "../lib/isEmpty"
-import { IncCntObjId } from "../lib/generalFun"
-import { encryptString, decryptString } from "../lib/cryptoJS"
-import UserToken from "../models/userToken"
-import { checkToken } from "../lib/recaptcha"
+import isEmpty from "../lib/isEmpty.js"
+import { IncCntObjId } from "../lib/generalFun.js"
+import { encryptString, decryptString } from "../lib/cryptoJS.js"
+import UserToken from "../models/userToken.js"
+import { checkToken } from "../lib/recaptcha.js"
 
 const ObjectId = mongoose.Types.ObjectId
 

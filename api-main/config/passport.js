@@ -4,7 +4,7 @@ const JwtStrategy = require("passport-jwt").Strategy,
 
 //import function
 import config from "./index.js"
-import UserToken from "../models/userToken"
+import UserToken from "../models/userToken.js"
 
 var opts = {}
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken()
@@ -12,9 +12,9 @@ opts.secretOrKey = config.secretOrKey
 opts.passReqToCallback = true
 
 //import model
-import { User, Admin } from "../models"
+import { User, Admin } from "../models/index.js"
 // import lib
-import isEmpty from "../lib/isEmpty"
+import isEmpty from "../lib/isEmpty.js"
 
 // export const usersAuth = (passport) => {
 //     passport.use("usersAuth",

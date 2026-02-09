@@ -1,7 +1,7 @@
 // import packages
 import mongoose from "mongoose";
 // import models
-import { ReferTable, SiteSetting, Transaction, User } from "../models";
+import { ReferTable, SiteSetting, Transaction, User } from "../models/index.js";
 
 const ObjectId = mongoose.Types.ObjectId;
 const getMonthCommission = async () => {

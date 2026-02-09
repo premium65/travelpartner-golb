@@ -3,7 +3,7 @@ import mongoose from "mongoose"
 import { generateSecret, verifyToken } from "node-2fa"
 import moment from "moment"
 import csv from "csv-express"
-import { removeKycDbFile } from "../lib/removeFile"
+import { removeKycDbFile } from "../lib/removeFile.js"
 
 // import modal
 import {
@@ -17,7 +17,7 @@ import {
   Contact,
   LoginHistory,
   AdminLogs,
-} from "../models"
+} from "../models/index.js"
 
 // import controller
 // import { mailTemplateLang } from "./emailTemplate.controller";
@@ -27,21 +27,21 @@ import {
 // import {deposit_ETH_Suscription,tokenDepositSuscription} from './coin/eth.controller'
 
 // // import config
-import config from "../config"
+import config from "../config/index.js"
 
 // import lib
-import isEmpty from "../lib/isEmpty"
-import { momentFormat, momentFormatForDownload } from "../lib/dateTimeHelper"
-import capitalize from "../lib/capitalize"
+import isEmpty from "../lib/isEmpty.js"
+import { momentFormat, momentFormatForDownload } from "../lib/dateTimeHelper.js"
+import capitalize from "../lib/capitalize.js"
 
 import {
   paginationQuery,
   filterSearchQuery,
   columnFillter,
-} from "../lib/adminHelpers"
-import { decryptObject, decryptString, encryptString } from "../lib/cryptoJS"
+} from "../lib/adminHelpers.js"
+import { decryptObject, decryptString, encryptString } from "../lib/cryptoJS.js"
 import multer from "multer"
-import imageFilter from "../lib/imageFilter"
+import imageFilter from "../lib/imageFilter.js"
 
 const ObjectId = mongoose.Types.ObjectId
 

@@ -2,7 +2,7 @@
 import cron from "node-cron";
 
 // import config
-import config from "../config";
+import config from "../config/index.js";
 
 
 export const commissionFeeZeroCron = cron.schedule(
