@@ -107,7 +107,7 @@ const ComponentsAuthLoginForm = () => {
           <Button 
             type="submit" 
             disabled={isSubmitting || !isValid} 
-            className={`w-full btn btn-gradient !mt-6 border-0 uppercase shadow-[0_10px_20px_-10px_rgba(67,97,238,0.44)] ${isSubmitting || !isValid ? 'bg-gray-400 cursor-not-allowed hover:bg-gray-400' : ''}`}
+            className="w-full btn btn-gradient !mt-6 border-0 uppercase shadow-[0_10px_20px_-10px_rgba(67,97,238,0.44)] disabled:bg-gray-400 disabled:cursor-not-allowed disabled:hover:bg-gray-400"
           >
             {isSubmitting ? 'Signing in...' : 'Sign in'}
           </Button>
