@@ -399,6 +399,6 @@ Common field types used across collections:
 
 ## See Also
 
-- [DATABASE.md](../DATABASE.md) - Comprehensive database documentation
-- [api-main/scripts/README.md](../api-main/scripts/README.md) - Database utility scripts
-- [api-main/models/](../api-main/models/) - Mongoose model definitions
+- [DATABASE.md](./DATABASE.md) - Comprehensive database documentation
+- [api-main/scripts/README.md](./api-main/scripts/README.md) - Database utility scripts
+- [api-main/models/](./api-main/models/) - Mongoose model definitions

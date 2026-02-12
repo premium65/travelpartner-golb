@@ -41,7 +41,9 @@ mongoose.connect(config.DATABASE_URI, {
         const adminExists = await models.Admin.findOne({ email: 'admin@travelpartner.com' });
         if (!adminExists) {
             const bcrypt = require('bcrypt');
-            const hashedPassword = await bcrypt.hash('Admin@123', 10);
+            // Use environment variable or default password for initial setup
+            const defaultPassword = process.env.DEFAULT_ADMIN_PASSWORD || 'Admin@123';
+            const hashedPassword = await bcrypt.hash(defaultPassword, 10);
             
             await models.Admin.create({
                 name: 'System Admin',
@@ -52,7 +54,10 @@ mongoose.connect(config.DATABASE_URI, {
             });
             console.log('\x1b[32m✓\x1b[0m Created default admin user');
             console.log('   Email: admin@travelpartner.com');
-            console.log('   Password: Admin@123');
+            console.log(`   Password: ${defaultPassword}`);
+            if (!process.env.DEFAULT_ADMIN_PASSWORD) {
+                console.log('   \x1b[33m(Using default password. Set DEFAULT_ADMIN_PASSWORD env var to customize)\x1b[0m');
+            }
         } else {
             console.log('\x1b[33m○\x1b[0m Admin user already exists');
         }
@@ -171,9 +176,12 @@ mongoose.connect(config.DATABASE_URI, {
         console.log('');
         console.log('Default Admin Credentials:');
         console.log('  Email: admin@travelpartner.com');
-        console.log('  Password: Admin@123');
+        console.log(`  Password: ${process.env.DEFAULT_ADMIN_PASSWORD || 'Admin@123'}`);
         console.log('');
         console.log('\x1b[33m%s\x1b[0m', '⚠ Please change the default admin password after first login!');
+        if (!process.env.DEFAULT_ADMIN_PASSWORD) {
+            console.log('\x1b[33m%s\x1b[0m', '⚠ Tip: Set DEFAULT_ADMIN_PASSWORD environment variable to use a custom password.');
+        }
         console.log('');
 
     } catch (error) {
